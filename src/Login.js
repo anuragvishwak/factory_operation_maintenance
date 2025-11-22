@@ -113,7 +113,7 @@ function Login() {
 
   return (
     <div className="h-screen w-screen flex items-center justify-center bg-gray-100">
-      <div className="flex border shadow-lg p-5 bg-white border-gray-300 flex-col">
+      <div className="flex border shadow p-5 bg-white border-gray-300 flex-col">
         <div className="">
           <p className="text-xl text-[#2f323a] font-bold">SignIn</p>
           <p className="text-[#d42041]">Enter your details to login.</p>
