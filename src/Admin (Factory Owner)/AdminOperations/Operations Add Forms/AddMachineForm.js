@@ -11,9 +11,6 @@ function AddMachineForm({ setopeningAddMachineForm, renderingMachines }) {
   const [purchasedDate, setpurchasedDate] = useState("");
   const [installedDate, setinstalledDate] = useState("");
   const [vendorName, setvendorName] = useState("");
-  const [lastMaintenanceDate, setlastMaintenanceDate] = useState("");
-  const [nextMaintenanceDate, setnextMaintenanceDate] = useState("");
-  const [maintenanceFrequency, setmaintenanceFrequency] = useState("");
 
   function createMachine() {
     const machineData = {
@@ -25,9 +22,6 @@ function AddMachineForm({ setopeningAddMachineForm, renderingMachines }) {
       purchasedDate: purchasedDate,
       installedDate: installedDate,
       vendorName: vendorName,
-      lastMaintenanceDate: lastMaintenanceDate,
-      nextMaintenanceDate: nextMaintenanceDate,
-      maintenanceFrequency: maintenanceFrequency,
     };
 
     try {
@@ -180,58 +174,6 @@ function AddMachineForm({ setopeningAddMachineForm, renderingMachines }) {
                   placeholder="Nikhil Kamath"
                   className="border border-gray-300 p-1 w-full"
                 />
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <p className=" text-[#d42041] text-lg font-semibold">
-              Maintenance Essentials
-            </p>
-            <div className="grid grid-cols-3 gap-4">
-              <div>
-                <p className="text-[#2f323a] font-semibold mb-1">
-                  Last Maintenance Date
-                </p>
-                <input
-                  onChange={(event) => {
-                    setlastMaintenanceDate(event.target.value);
-                  }}
-                  type="date"
-                  className="border border-gray-300 p-1 w-full"
-                />
-              </div>
-
-              <div>
-                <p className="text-[#2f323a] font-semibold mb-1">
-                  Next Maintenance Date
-                </p>
-                <input
-                  onChange={(event) => {
-                    setnextMaintenanceDate(event.target.value);
-                  }}
-                  type="date"
-                  className="border border-gray-300 p-1 w-full"
-                />
-              </div>
-
-              <div>
-                <p className="text-[#2f323a] font-semibold mb-1">
-                  Maintenance Frequency
-                </p>
-
-                <select
-                  onChange={(event) => {
-                    setmaintenanceFrequency(event.target.value);
-                  }}
-                  className="border border-gray-300 p-1 w-full"
-                >
-                  <option value="">Select Frequency</option>
-                  <option value="daily">Daily</option>
-                  <option value="weekly">Weekly</option>
-                  <option value="monthly">Monthly</option>
-                  <option value="yearly">Yearly</option>
-                </select>
               </div>
             </div>
           </div>

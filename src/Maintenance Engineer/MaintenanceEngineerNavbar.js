@@ -11,7 +11,9 @@ function MaintenanceEngineerNavbar() {
       <div className="flex items-center text-[16px] font-semibold space-x-4">
         <button
           className={`${
-            location.pathname === "/MaintenanceEngineerDashboard" ? "text-[#d42041]" : ""
+            location.pathname === "/MaintenanceEngineerDashboard"
+              ? "text-[#d42041]"
+              : ""
           }`}
           onClick={() => {
             navigation("/MaintenanceEngineerDashboard");

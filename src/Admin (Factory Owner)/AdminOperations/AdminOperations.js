@@ -5,7 +5,6 @@ import MachineManagement from "./MachineManagement";
 import DowntimeReasons from "./DowntimeReasons";
 import ProductionLines from "./ProductionLines";
 import MachineAssignment from "./MachineAssignment";
-import AssignOperator from "./AssignOperator";
 import DailyProductionLogs from "./DailyProductionLogs";
 import ShiftLogs from "./ShiftLogs";
 import MaterialConsumption from "./MaterialConsumption";
@@ -30,8 +29,6 @@ function AdminOperations() {
           <ProductionLines />
         ) : currentSection === "machine_assignment" ? (
           <MachineAssignment />
-        ) : currentSection === "assign_operator" ? (
-          <AssignOperator />
         ) : currentSection === "daily_production_logs" ? (
           <DailyProductionLogs />
         ) : currentSection === "shift_logs" ? (

@@ -17,6 +17,7 @@ import SupplierContractManagementDashboard from "./Supplier & Contractor Managem
 import StoreInventoryManagerDashboard from "./Store and inventory manager/StoreInventoryManagerDashboard";
 import UserManagement from "./Admin (Factory Owner)/UserManagement";
 import AdminOperations from "./Admin (Factory Owner)/AdminOperations/AdminOperations";
+import AdminMaintenance from "./Admin (Factory Owner)/AdminMaintenance/AdminMaintenance";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/AdminDashboard" element={<AdminDashboard />} />
 
           <Route path="/AdminOperations" element={<AdminOperations />} />
+          <Route path="/AdminMaintenance" element={<AdminMaintenance />} />
 
           <Route
             path="/SafetyOfficerDashboard"

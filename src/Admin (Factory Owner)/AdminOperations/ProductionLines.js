@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AddProductionLineForm from "./Operations Add Forms/AddProductionLineForm";
 import { database } from "../../FirebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
+import { FaDotCircle } from "react-icons/fa";
 
 function ProductionLines() {
   const [openingAddProductionLineForm, setopeningProductionLineForm] =
@@ -18,6 +19,7 @@ function ProductionLines() {
 
     setgettigMachines(multipleArray);
   }
+
   async function renderingProductionLines() {
     const taskDetails = await getDocs(
       collection(database, "production_line_database")
@@ -62,7 +64,7 @@ function ProductionLines() {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-2 mt-4 gap-4">
+      <div className="grid grid-cols-3 mt-4 gap-4">
         {gettingProductionLines.map((production) => (
           <div>
             <div className="border bg-white border-gray-300">
@@ -82,7 +84,7 @@ function ProductionLines() {
               </div>
 
               <div className="p-4">
-                <div className="flex items-center gap-3">
+                <div className="grid grid-cols-2 gap-3">
                   <div className="border w-full border-gray-300 p-3">
                     <p className="text-sm text-[#2f323a]">Supervisor</p>
                     <p className="text-[#d42041] font-semibold">
@@ -124,22 +126,25 @@ function ProductionLines() {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 mt-4 gap-3">
+                  <div className="mt-4">
                     {production.assignedMachines.map((machineId) => {
                       const machine = gettingMachines.find(
                         (m) => m.id === machineId
                       );
 
+                      if (!machine) return null;
+
                       return (
-                        <div className="border p-3 border-gray-300">
-                          <p
-                            className="text-[#d42041] font-semibold"
-                            key={machineId}
-                          >
-                            {machine?.machineName}
+                        <div
+                          className="flex items-center space-x-1"
+                          key={machineId}
+                        >
+                          <FaDotCircle size={12} className="text-[#d42041]" />
+                          <p className="text-[#d42041] font-semibold">
+                            {machine.machineName}
                           </p>
-                          <p className="text-[#2f323a] text-sm" key={machineId}>
-                            {machine?.machineCode}
+                          <p className="text-[#2f323a] text-sm">
+                            ({machine.machineCode})
                           </p>
                         </div>
                       );

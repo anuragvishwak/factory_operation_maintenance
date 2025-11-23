@@ -29,7 +29,16 @@ function AdminNavbar() {
         >
           Operations
         </button>
-        <button>Maintenance</button>
+        <button
+          className={`${
+            location.pathname === "/AdminMaintenance" ? "text-[#d42041]" : ""
+          }`}
+          onClick={() => {
+            navigation("/AdminMaintenance");
+          }}
+        >
+          Maintenance
+        </button>
         <button
           className={`${
             location.pathname === "/UserManagement" ? "text-[#d42041]" : ""
@@ -42,7 +51,6 @@ function AdminNavbar() {
         </button>
         <button>Inventory Management</button>
         <button>Safety & Quality</button>
-        <button>Inventory</button>
         <button>Finance & Vendors</button>
         <button>Reports</button>
         <button>Audit Logs</button>
