@@ -39,16 +39,6 @@ function OperationsSubNavbar({ currentSection, setcurrentSection }) {
       </button>
       <button
         className={`text-start py-1 px-2 ${
-          currentSection === "assign_operator" ? "bg-[#2f323a] text-white" : ""
-        }`}
-        onClick={() => {
-          setcurrentSection("assign_operator");
-        }}
-      >
-        Assign Operator
-      </button>
-      <button
-        className={`text-start py-1 px-2 ${
           currentSection === "daily_production_logs"
             ? "bg-[#2f323a] text-white"
             : ""
