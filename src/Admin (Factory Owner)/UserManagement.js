@@ -3,7 +3,6 @@ import AdminNavbar from "./AdminNavbar";
 import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { database } from "../FirebaseConfig";
 
-
 function UserManagement() {
   const [gettingUsers, setgettingUsers] = useState([]);
 
@@ -38,7 +37,22 @@ function UserManagement() {
   return (
     <div className="bg-gray-100 min-h-screen h-full">
       <AdminNavbar />
+      <div className="flex bg-white p-4 border border-gray-300 m-4 items-end justify-between">
+        <div>
+          <p className="text-[#2f323a] text-xl font-bold">
+            User Management
+          </p>
+          <p className="text-[#d42041]">
+            Manage users and their access to the dashboards from one
+            centralized system.
+          </p>
+        </div>
 
+        <input
+          placeholder="Search Users...."
+          className="border border-gray-300 py-1.5 px-3 w-96"
+        />
+      </div>
       <div className="m-4 grid grid-cols-4 gap-4">
         {gettingUsers.map((user) => (
           <div className="border border-gray-300 bg-white p-4">

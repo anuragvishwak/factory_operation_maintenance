@@ -18,6 +18,8 @@ import StoreInventoryManagerDashboard from "./Store and inventory manager/StoreI
 import UserManagement from "./Admin (Factory Owner)/UserManagement";
 import AdminOperations from "./Admin (Factory Owner)/AdminOperations/AdminOperations";
 import AdminMaintenance from "./Admin (Factory Owner)/AdminMaintenance/AdminMaintenance";
+import AdminInventoryManagement from "./Admin (Factory Owner)/AdminInventoryManagement";
+import AdminSafetyQuality from "./Admin (Factory Owner)/Safety Quality/AdminSafetyQuality";
 
 function App() {
   return (
@@ -39,9 +41,21 @@ function App() {
             element={<SafetyOfficerDashboard />}
           />
 
+          
+          <Route
+            path="/AdminSafetyQuality"
+            element={<AdminSafetyQuality />}
+          />
+
+
           <Route
             path="/MachineOperatorDashboard"
             element={<MachineOperatorDashboard />}
+          />
+
+          <Route
+            path="/AdminInventoryManagement"
+            element={<AdminInventoryManagement />}
           />
 
           <Route
@@ -54,17 +68,12 @@ function App() {
             element={<SupplierContractManagementDashboard />}
           />
 
-        
-
           <Route
             path="/StoreInventoryManagerDashboard"
             element={<StoreInventoryManagerDashboard />}
           />
 
-          <Route
-            path="/UserManagement"
-            element={<UserManagement />}
-          />
+          <Route path="/UserManagement" element={<UserManagement />} />
 
           <Route path="/SignUp" element={<SignUp />} />
         </Routes>

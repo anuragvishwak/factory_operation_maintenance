@@ -52,7 +52,7 @@ function MachineAssignment() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 my-4 gap-4">
+      <div className="grid grid-cols-4 my-4 gap-4">
         {gettingAssignMachines.map((assign) => (
           <div className="bg-white border border-gray-300 p-4">
             <div>
@@ -87,9 +87,9 @@ function MachineAssignment() {
               </p>
             </div>
 
-            <hr className="border-gray-300 my-2" />
+            <hr className="border-gray-300 my-3" />
 
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 gap-3">
               <div className="p-2 border border-gray-300">
                 <p className="text-sm text-[#2f323a]">Start Date</p>
                 <p className="text-[#d42041] font-semibold">
@@ -97,19 +97,16 @@ function MachineAssignment() {
                 </p>
               </div>
 
-               <div className="p-2 border border-gray-300">
+              <div className="p-2 border border-gray-300">
                 <p className="text-sm text-[#2f323a]">End Date</p>
-                <p className="text-[#d42041] font-semibold">
-                  {assign.endDate}
-                </p>
+                <p className="text-[#d42041] font-semibold">{assign.endDate}</p>
               </div>
-
-               <div className="p-2 border border-gray-300">
-                <p className="text-sm text-[#2f323a]">Daily Hours Alloted</p>
-                <p className="text-[#d42041] font-semibold">
-                  {assign.dailyHoursAlloted} Hours
-                </p>
-              </div>
+            </div>
+            <div className="p-2 mt-3 border border-gray-300">
+              <p className="text-sm text-[#2f323a]">Daily Hours Alloted</p>
+              <p className="text-[#d42041] font-semibold">
+                {assign.dailyHoursAlloted} Hours
+              </p>
             </div>
           </div>
         ))}

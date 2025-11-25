@@ -47,7 +47,7 @@ function MachineManagement() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 mt-4 gap-4">
+      <div className="grid grid-cols-4 mt-4 gap-4">
         {gettingMachines.map((machine) => (
           <div className="border bg-white border-gray-300">
             <div className="bg-[#2f323a] p-4 text-white">
@@ -66,7 +66,7 @@ function MachineManagement() {
             </div>
 
             <div className="bg-white p-4">
-              <div className="grid grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 gap-3">
                 <div className="border border-gray-300 p-3">
                   <p className="text-sm text-[#2f323a]">Type</p>
                   <p className="text-[#d42041] font-semibold">

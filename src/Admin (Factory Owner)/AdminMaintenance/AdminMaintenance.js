@@ -4,7 +4,6 @@ import AdminNavbar from "../AdminNavbar";
 import PreventiveMaintenancePlanning from "./PreventiveMaintenancePlanning";
 import MaintenanceReports from "./MaintenanceReports";
 import BreakdownManagement from "./BreakdownManagement";
-import WorkOrders from "./WorkOrders";
 import SparePartsInventory from "./SparePartsInventory";
 
 function AdminMaintenance() {
@@ -27,8 +26,6 @@ function AdminMaintenance() {
             <PreventiveMaintenancePlanning />
           ) : currentSection === "breakdown_management" ? (
             <BreakdownManagement />
-          ) : currentSection === "work_orders" ? (
-            <WorkOrders />
           ) : currentSection === "spare_parts_invetory" ? (
             <SparePartsInventory />
           ) : currentSection === "maintenance_reports" ? (
