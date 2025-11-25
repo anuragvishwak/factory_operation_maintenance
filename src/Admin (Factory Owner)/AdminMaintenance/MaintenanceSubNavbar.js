@@ -29,16 +29,6 @@ function MaintenanceSubNavbar({ currentSection, setcurrentSection }) {
       </button>
       <button
         className={`text-start py-1 px-2 ${
-          currentSection === "work_orders" ? "bg-[#2f323a] text-white" : ""
-        }`}
-        onClick={() => {
-          setcurrentSection("work_orders");
-        }}
-      >
-        Work Orders
-      </button>
-      <button
-        className={`text-start py-1 px-2 ${
           currentSection === "spare_parts_invetory"
             ? "bg-[#2f323a] text-white"
             : ""

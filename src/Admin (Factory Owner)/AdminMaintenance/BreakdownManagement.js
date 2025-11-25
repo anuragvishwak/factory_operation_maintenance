@@ -51,7 +51,7 @@ function BreakdownManagement() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 mt-4 gap-4">
+      <div className="grid grid-cols-4 mt-4 gap-4">
         {gettingBreakdownTickets.map((breakdown) => (
           <div className="border bg-white border-gray-300">
             <div className="bg-[#2f323a] p-4 text-white">

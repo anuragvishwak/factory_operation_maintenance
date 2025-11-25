@@ -43,7 +43,7 @@ function PreventiveMaintenancePlanning() {
 
         <div className="flex items-center space-x-4">
           <input
-            placeholder="Search Machines"
+            placeholder="Search Machines...."
             className="border border-gray-300 py-1.5 px-3 w-96"
           />
           <button

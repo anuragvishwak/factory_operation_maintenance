@@ -64,7 +64,7 @@ function ProductionLines() {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-3 mt-4 gap-4">
+      <div className="grid grid-cols-4 mt-4 gap-4">
         {gettingProductionLines.map((production) => (
           <div>
             <div className="border bg-white border-gray-300">
@@ -101,7 +101,7 @@ function ProductionLines() {
 
                   <div className="border w-full border-gray-300 p-3">
                     <p className="text-sm text-[#2f323a]">
-                      Daily Target Output
+                      Daily Target
                     </p>
                     <p className="text-[#d42041] font-semibold">
                       {production.dailyTargetOuput} units
@@ -118,10 +118,10 @@ function ProductionLines() {
 
                 <div className="p-4 border border-gray-300 mt-4">
                   <div className="flex items-center justify-between">
-                    <p className="text-lg font-semibold text-[#2f323a]">
+                    <p className="font-semibold text-[#2f323a]">
                       Assigned Machines
                     </p>
-                    <p className="text-white bg-[#2f323a] text-sm py-0.5 px-4 rounded-full">
+                    <p className="text-white bg-[#2f323a] text-[12px] py-0.5 px-4 rounded-full">
                       {production.assignedMachines.length} machines
                     </p>
                   </div>
@@ -139,8 +139,7 @@ function ProductionLines() {
                           className="flex items-center space-x-1"
                           key={machineId}
                         >
-                          <FaDotCircle size={12} className="text-[#d42041]" />
-                          <p className="text-[#d42041] font-semibold">
+                          <p className="text-[#d42041]">
                             {machine.machineName}
                           </p>
                           <p className="text-[#2f323a] text-sm">
