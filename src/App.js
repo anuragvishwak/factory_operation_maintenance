@@ -20,6 +20,7 @@ import AdminOperations from "./Admin (Factory Owner)/AdminOperations/AdminOperat
 import AdminMaintenance from "./Admin (Factory Owner)/AdminMaintenance/AdminMaintenance";
 import AdminInventoryManagement from "./Admin (Factory Owner)/AdminInventoryManagement";
 import AdminSafetyQuality from "./Admin (Factory Owner)/Safety Quality/AdminSafetyQuality";
+import FinanceVendor from "./Admin (Factory Owner)/Finance and Vendor/FinanceVendor";
 
 function App() {
   return (
@@ -41,11 +42,8 @@ function App() {
             element={<SafetyOfficerDashboard />}
           />
 
-          
-          <Route
-            path="/AdminSafetyQuality"
-            element={<AdminSafetyQuality />}
-          />
+          <Route path="/AdminSafetyQuality" element={<AdminSafetyQuality />} />
+          <Route path="/FinanceVendor" element={<FinanceVendor />} />
 
 
           <Route

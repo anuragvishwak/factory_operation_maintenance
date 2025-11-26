@@ -3,10 +3,10 @@ import React, { useState } from "react";
 
 function SafetySubNavbar({ currentSection, setcurrentSection }) {
   return (
-    <div className="flex text-[#2f323a] font-semibold">
+    <div  className="flex flex-col w-64 bg-[#d42041] h-[calc(100vh-56px)] p-4 text-white font-semibold">
       <button
         className={`text-start py-1 px-2 ${
-          currentSection === "daily_safety_checks" ? "text-[#d42041]" : ""
+          currentSection === "daily_safety_checks" ? "bg-[#2f323a] text-white" : ""
         }`}
         onClick={() => {
           setcurrentSection("daily_safety_checks");
@@ -16,7 +16,7 @@ function SafetySubNavbar({ currentSection, setcurrentSection }) {
       </button>
       <button
         className={`text-start py-1 px-2 ${
-          currentSection === "reporting_incidents" ? "text-[#d42041]" : ""
+          currentSection === "reporting_incidents" ? "bg-[#2f323a] text-white" : ""
         }`}
         onClick={() => {
           setcurrentSection("reporting_incidents");
@@ -26,7 +26,7 @@ function SafetySubNavbar({ currentSection, setcurrentSection }) {
       </button>
       <button
         className={`text-start py-1 px-2 ${
-          currentSection === "providing_safety_training" ? "text-[#d42041]" : ""
+          currentSection === "providing_safety_training" ? "bg-[#2f323a] text-white" : ""
         }`}
         onClick={() => {
           setcurrentSection("providing_safety_training");
@@ -36,7 +36,7 @@ function SafetySubNavbar({ currentSection, setcurrentSection }) {
       </button>
       <button
         className={`text-start py-1 px-2 ${
-          currentSection === "ensuring_compliance" ? "text-[#d42041]" : ""
+          currentSection === "ensuring_compliance" ? "bg-[#2f323a] text-white" : ""
         }`}
         onClick={() => {
           setcurrentSection("ensuring_compliance");
@@ -47,7 +47,7 @@ function SafetySubNavbar({ currentSection, setcurrentSection }) {
 
       <button
         className={`text-start py-1 px-2 ${
-          currentSection === "maintaining_autit_records" ? "text-[#d42041]" : ""
+          currentSection === "maintaining_autit_records" ? "bg-[#2f323a] text-white" : ""
         }`}
         onClick={() => {
           setcurrentSection("maintaining_autit_records");

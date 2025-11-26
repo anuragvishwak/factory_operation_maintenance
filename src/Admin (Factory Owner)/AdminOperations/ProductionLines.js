@@ -64,7 +64,7 @@ function ProductionLines() {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-4 mt-4 gap-4">
+      <div className="grid grid-cols-3 mt-4 gap-4">
         {gettingProductionLines.map((production) => (
           <div>
             <div className="border bg-white border-gray-300">
