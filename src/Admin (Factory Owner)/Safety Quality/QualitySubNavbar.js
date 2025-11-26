@@ -24,10 +24,10 @@ function QualitySubNavbar({ currentSection, setcurrentSection }) {
       </button>
       <button
         className={`text-start py-1 px-2 ${
-          currentSection === "in_process_quantity" ? "text-[#d42041]" : ""
+          currentSection === "in_process_quality" ? "text-[#d42041]" : ""
         }`}
         onClick={() => {
-          setcurrentSection("in_process_quantity");
+          setcurrentSection("in_process_quality");
         }}
       >
         In-Process Quality

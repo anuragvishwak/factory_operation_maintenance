@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { useLocation, useNavigate } from "react-router-dom";
 
-function AdminNavbar() {
+function AdminNavbar({
+  currentSection,
+  setcurrentSection,
+  setfinanceVendorToggleSection,
+  financeVendorToggleSection,
+}) {
   const location = useLocation();
   const navigation = useNavigate();
 
@@ -71,12 +76,82 @@ function AdminNavbar() {
         >
           Safety & Quality
         </button>
-        <button>Finance & Vendors</button>
+        <button
+          className={`${
+            location.pathname === "/FinanceVendor" ? "text-[#d42041]" : ""
+          }`}
+          onClick={() => {
+            navigation("/FinanceVendor");
+          }}
+        >
+          Finance & Vendors
+        </button>
         <button>Reports</button>
         <button>Audit Logs</button>
       </div>
 
       <div className="flex items-center space-x-2">
+        {location.pathname === "/AdminSafetyQuality" ? (
+          <div className="flex items-center space-x-4">
+            <div className="font-semibold text-sm bg-[#d42041] p-1">
+              <button
+                onClick={() => {
+                  setcurrentSection("safety");
+                }}
+                className={`py-0.5 px-3 ${
+                  currentSection === "finance"
+                    ? "bg-[#2f323a] text-white"
+                    : "text-[#2f323a]"
+                }`}
+              >
+                Safety
+              </button>
+              <button
+                onClick={() => {
+                  setcurrentSection("quality");
+                }}
+                className={`py-0.5 px-3 ${
+                  currentSection === "vendor"
+                    ? "bg-[#2f323a] text-white"
+                    : "text-white"
+                }`}
+              >
+                Quality
+              </button>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+
+        {location.pathname === "/FinanceVendor" && (
+          <div className="flex items-center space-x-4">
+            <div className="font-semibold text-sm bg-[#d42041] p-1 rounded">
+              <button
+                onClick={() => setfinanceVendorToggleSection("finance")}
+                className={`py-0.5 px-3 ${
+                  financeVendorToggleSection === "finance"
+                    ? "bg-[#2f323a] text-white"
+                    : "text-white"
+                }`}
+              >
+                Finance
+              </button>
+
+              <button
+                onClick={() => setfinanceVendorToggleSection("vendor")}
+                className={`py-0.5 px-3 ${
+                  financeVendorToggleSection === "vendor"
+                    ? "bg-[#2f323a] text-white"
+                    : "text-white"
+                }`}
+              >
+                Vendors
+              </button>
+            </div>
+          </div>
+        )}
+
         <button className="bg-[#d42041] font-semibold py-1 px-3  text-white">
           Messenger
         </button>

@@ -6,13 +6,13 @@ function Safety() {
   const [currentSection, setcurrentSection] = useState("daily_safety_checks");
 
   return (
-    <div>
+    <div className="flex">
       <SafetySubNavbar
         currentSection={currentSection}
         setcurrentSection={setcurrentSection}
       />
 
-      <div>
+      <div className="p-4">
         {currentSection === "daily_safety_checks" ? <SafetyChecks /> : ""}
       </div>
     </div>
