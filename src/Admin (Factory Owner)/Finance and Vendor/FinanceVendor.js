@@ -8,14 +8,14 @@ function FinanceVendor() {
     useState("finance");
 
   return (
-    <div>
+    <div className="bg-gray-100 w-full min-h-screen h-full">
       <AdminNavbar
         setfinanceVendorToggleSection={setfinanceVendorToggleSection}
         financeVendorToggleSection={financeVendorToggleSection}
       />
 
-       <div>
-        <div className="">
+      <div className="w-full">
+        <div>
           {financeVendorToggleSection === "finance" ? <Finance /> : <Vendor />}
         </div>
       </div>

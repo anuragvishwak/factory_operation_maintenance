@@ -13,7 +13,7 @@ function Finance() {
         currentSection={currentSection}
         setcurrentSection={setcurrentSection}
       />
-      <div className="m-4">
+      <div className="w-full m-4">
         {currentSection === "expense_management" ? (
           <ExpenseManagement />
         ) : currentSection === "invoice_management" ? (

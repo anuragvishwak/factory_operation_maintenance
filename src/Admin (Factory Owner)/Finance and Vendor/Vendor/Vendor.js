@@ -13,7 +13,7 @@ function Vendor() {
         setcurrentSection={setcurrentSection}
       />
 
-      <div className="m-4">
+      <div className=" w-full m-4">
         {currentSection === "vendor_registration" ? (
           <VendorRegistration />
         ) : (
