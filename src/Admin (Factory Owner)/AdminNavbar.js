@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BiLogOut } from "react-icons/bi";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 function AdminNavbar({
   currentSection,
@@ -93,15 +93,15 @@ function AdminNavbar({
       <div className="flex items-center space-x-2">
         {location.pathname === "/AdminSafetyQuality" ? (
           <div className="flex items-center space-x-4">
-            <div className="font-semibold text-sm bg-[#d42041] p-1">
+            <div className="font-semibold text-sm bg-[#d42041] p-1 rounded">
               <button
                 onClick={() => {
                   setcurrentSection("safety");
                 }}
                 className={`py-0.5 px-3 ${
                   currentSection === "finance"
-                    ? "bg-[#2f323a] text-white"
-                    : "text-[#2f323a]"
+                   ? "bg-[#2f323a] text-white"
+                    : "text-white"
                 }`}
               >
                 Safety
@@ -155,7 +155,12 @@ function AdminNavbar({
         <button className="bg-[#d42041] font-semibold py-1 px-3  text-white">
           Messenger
         </button>
-        <button>
+        <button
+          onClick={() => {
+            navigation("/");
+            localStorage.clear();
+          }}
+        >
           <BiLogOut size={25} />
         </button>
       </div>

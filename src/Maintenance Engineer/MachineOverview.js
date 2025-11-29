@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import AddMachineForm from "./Operations Add Forms/AddMachineForm";
+import MaintenanceEngineerNavbar from "./MaintenanceEngineerNavbar";
+import { database } from "../FirebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
-import { database } from "../../FirebaseConfig";
 
-function MachineManagement() {
-  const [openingAddMachineForm, setopeningAddMachineForm] = useState(false);
+function MachineOverview() {
   const [gettingMachines, setgettigMachines] = useState([]);
 
   async function renderingMachines() {
@@ -22,32 +21,10 @@ function MachineManagement() {
   }, []);
 
   return (
-    <div className="m-4">
-      <div className="flex bg-white p-4 border border-gray-300 items-end justify-between">
-        <div>
-          <p className="text-[#2f323a] text-xl font-bold">Machine Management</p>
-          <p className="text-[#d42041]">
-            Add and manage all machines from one centralized system.
-          </p>
-        </div>
+    <div className="bg-gray-100 min-h-screen h-full">
+      <MaintenanceEngineerNavbar />
 
-        <div className="flex items-center space-x-4">
-          <input
-            placeholder="Search Machines"
-            className="border border-gray-300 py-1.5 px-3 w-96"
-          />
-          <button
-            onClick={() => {
-              setopeningAddMachineForm(true);
-            }}
-            className="bg-[#d42041] py-1.5 px-3 text-white font-semibold"
-          >
-            + Add Machine
-          </button>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-3 mt-4 gap-4">
+      <div className="grid grid-cols-3 m-4 gap-4">
         {gettingMachines.map((machine) => (
           <div className="border bg-white border-gray-300">
             <div className="bg-[#2f323a] p-4 text-white">
@@ -65,7 +42,7 @@ function MachineManagement() {
               </div>
             </div>
 
-            <div className="bg-white border-t-8 border-[#d42041] p-4">
+            <div className="border-t-8 border-[#d42041] p-4">
               <div className="grid grid-cols-2 gap-3">
                 <div className="border border-gray-300 p-3">
                   <p className="text-sm text-[#2f323a]">Type</p>
@@ -131,11 +108,8 @@ function MachineManagement() {
           </div>
         ))}
       </div>
-      {openingAddMachineForm && (
-        <AddMachineForm renderingMachines = {renderingMachines} setopeningAddMachineForm={setopeningAddMachineForm} />
-      )}
     </div>
   );
 }
 
-export default MachineManagement;
+export default MachineOverview;

@@ -21,10 +21,50 @@ function MaintenanceEngineerNavbar() {
         >
           Home
         </button>
-        <button>Machine Overview</button>
-        <button className="text-left ">Active Jobs</button>
-        <button>Breakdown</button>
-        <button>Preventive Maintenance Schedule</button>
+        <button
+          className={`${
+            location.pathname === "/MachineOverview" ? "text-[#d42041]" : ""
+          }`}
+          onClick={() => {
+            navigation("/MachineOverview");
+          }}
+        >
+          Machine Overview
+        </button>
+        <button
+          className={`${
+            location.pathname === "/ActiveJobs" ? "text-[#d42041]" : ""
+          }`}
+          onClick={() => {
+            navigation("/ActiveJobs");
+          }}
+        >
+          Active Jobs
+        </button>
+        <button
+          className={`${
+            location.pathname === "/MaintenanceBreakdown"
+              ? "text-[#d42041]"
+              : ""
+          }`}
+          onClick={() => {
+            navigation("/MaintenanceBreakdown");
+          }}
+        >
+          Breakdown
+        </button>
+        <button
+          className={`${
+            location.pathname === "/PreventiveMaintenanceSchedule"
+              ? "text-[#d42041]"
+              : ""
+          }`}
+          onClick={() => {
+            navigation("/PreventiveMaintenanceSchedule");
+          }}
+        >
+          Preventive Maintenance Schedule
+        </button>
         <button>Work Orders</button>
         <button>Spare Parts Requests</button>
         <button>Health Logs</button>

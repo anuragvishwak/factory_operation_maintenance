@@ -69,7 +69,7 @@ function PreventiveMaintenancePlanning() {
               </p>
             </div>
 
-            <div className="p-4">
+            <div className="border-[#d42041] border-t-8 p-4">
               <div className="mb-3 grid grid-cols-2 gap-4">
                 <div className="border w-full border-gray-300 p-3">
                   <p className="text-sm text-[#2f323a]">

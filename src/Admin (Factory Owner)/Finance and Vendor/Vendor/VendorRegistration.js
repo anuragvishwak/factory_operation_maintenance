@@ -9,7 +9,7 @@ function VendorRegistration() {
   const [gettingVendors, setgettingVendors] = useState([]);
   const [openingAdditionalData, setopeningAdditionalData] = useState(false);
 
-  async function renderingMachines() {
+  async function renderingVendors() {
     const taskDetails = await getDocs(
       collection(database, "vendor_management_database")
     );
@@ -22,7 +22,7 @@ function VendorRegistration() {
   }
 
   useEffect(() => {
-    renderingMachines();
+    renderingVendors();
   }, []);
 
   return (
@@ -53,7 +53,7 @@ function VendorRegistration() {
         </div>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-4">
+      <div className="mt-4 grid grid-cols-3 gap-4">
         {gettingVendors.map((vendor) => (
           <div className="border bg-white border-gray-300">
             <div className="bg-[#2f323a] p-4 text-white">
@@ -65,7 +65,7 @@ function VendorRegistration() {
               </p>
             </div>
 
-            <div className="bg-white p-4">
+            <div className="border-t-8 border-[#d42041] p-4">
               <div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="border border-gray-300 p-2.5">
@@ -82,13 +82,13 @@ function VendorRegistration() {
                     </p>
                   </div>
 
-                  <div className="border border-gray-300 p-2.5">
+                </div>
+                  <div className="border mt-4 border-gray-300 p-2.5">
                     <p className="text-sm text-[#2f323a]">Email</p>
                     <p className="text-[#d42041] font-semibold">
                       {vendor.email}
                     </p>
                   </div>
-                </div>
 
                 <div className="flex mt-4 justify-end">
                   <button

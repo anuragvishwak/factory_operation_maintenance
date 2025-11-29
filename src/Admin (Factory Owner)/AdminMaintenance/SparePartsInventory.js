@@ -50,7 +50,7 @@ function SparePartsInventory() {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-4 mt-4">
+      <div className="grid grid-cols-3 gap-4 mt-4">
         {gettingSpareParts.map((spare) => (
           <div className="border bg-white border-gray-300">
             <div className="bg-[#2f323a] p-4 text-white">
@@ -60,8 +60,9 @@ function SparePartsInventory() {
               <p className="text-[#d42041] text-sm">{spare.partCode}</p>
             </div>
 
-            <div className="p-4">
-              <div className="border w-full border-gray-300 p-3">
+            <div className="border-[#d42041] border-t-8 p-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="border w-full border-gray-300 p-3">
                 <p className="text-sm text-[#2f323a]">Part Name</p>
                 <p className="text-[#d42041] font-semibold">{spare.partName}</p>
               </div>
@@ -70,9 +71,10 @@ function SparePartsInventory() {
                 <p className="text-sm text-[#2f323a]">Vendor</p>
                 <p className="text-[#d42041] font-semibold">{spare.vendor}</p>
               </div>
+              </div>
 
               <div className="p-3 border border-gray-300">
-                <div className="">
+                <div className="flex items-center justify-between">
                   <p className="text-sm text-[#2f323a]">Current Stock</p>
                   <p className="text-[#d42041] font-semibold">
                     {spare.currentQuantity} pcs
@@ -81,7 +83,7 @@ function SparePartsInventory() {
 
                 <hr className="border-gray-300 my-3" />
 
-                <div className="">
+                <div className="flex items-center justify-between">
                   <p className="text-sm text-red-500">Minimum Stock Alert</p>
                   <p className="text-red-500 font-semibold">
                     {spare.minimumStockAlert} pcs

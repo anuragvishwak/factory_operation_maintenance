@@ -53,7 +53,7 @@ function AdminInventoryManagement() {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 m-4 gap-4">
+      <div className="grid grid-cols-3 m-4 gap-4">
         {gettingInventoryDetails.map((inventory) => (
           <div
             key={inventory.id}
@@ -79,7 +79,7 @@ function AdminInventoryManagement() {
               </div>
             </div>
 
-            <div className="p-4">
+            <div className="border-t-8 border-[#d42041] p-4">
               {inventory.inventoryCategory === "Raw Materials" && (
                 <>
                   <div className="border mb-4 border-gray-300 p-3">

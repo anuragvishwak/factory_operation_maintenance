@@ -15,6 +15,10 @@ function AddPaymentForm({ setopeningAddPaymentForm }) {
             Close
           </button>
         </div>
+
+        <div>
+            
+        </div>
       </div>
     </div>
   );

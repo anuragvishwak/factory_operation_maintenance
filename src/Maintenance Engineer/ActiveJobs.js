@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import AddBreakdownTicketForm from "./MaintenanceAddForms/AddBreakdownTicketForm";
+import MaintenanceEngineerNavbar from "./MaintenanceEngineerNavbar";
 import { collection, getDocs } from "firebase/firestore";
-import { database } from "../../FirebaseConfig";
+import { database } from "../FirebaseConfig";
 
-function BreakdownManagement() {
-  const [openingBreakdownTicketForm, setopeningBreakdownTicketForm] =
-    useState(false);
+function ActiveJobs() {
   const [gettingBreakdownTickets, setgettingBreakdownTickets] = useState([]);
   async function renderingBreakdownTickets() {
     const taskDetails = await getDocs(
@@ -24,34 +22,22 @@ function BreakdownManagement() {
   }, []);
 
   return (
-    <div className="m-4">
-      <div className="flex bg-white p-4 border border-gray-300 items-end justify-between">
-        <div className="">
-          <p className="text-[#2f323a] text-xl font-bold">
-            Breakdown Management
-          </p>
+    <div className="bg-gray-100 min-h-screen h-full">
+      <MaintenanceEngineerNavbar />
+      <div className="bg-white border m-4 p-4 border-gray-300 flex items-center justify-between">
+        <div>
+          <p className="text-[#2f323a] text-xl font-bold">Active Jobs</p>
           <p className="text-[#d42041]">
-            Add and manage all Breakdown tickets from one centralized system.
+            See All machine maintenance jobs from one centralized system.
           </p>
         </div>
-
-        <div className="flex items-center space-x-4">
-          <input
-            placeholder="Search breakdowns..."
-            className="border border-gray-300 py-1.5 px-3 w-96"
-          />
-          <button
-            onClick={() => {
-              setopeningBreakdownTicketForm(true);
-            }}
-            className="bg-[#d42041] py-1.5 px-3 text-white font-semibold"
-          >
-            + Add Breakdown Ticket
-          </button>
-        </div>
+        <input
+          placeholder="Search Breakdown Tickets...."
+          className="p-1.5 w-96 border border-gray-300"
+        />
       </div>
 
-      <div className="grid grid-cols-3 mt-4 gap-4">
+      <div className="grid grid-cols-3 m-4 gap-4">
         {gettingBreakdownTickets.map((breakdown) => (
           <div className="border bg-white border-gray-300">
             <div className="bg-[#2f323a] p-4 text-white">
@@ -91,18 +77,34 @@ function BreakdownManagement() {
                   {breakdown.issueDescription}
                 </p>
               </div>
+              <div className="mt-4 flex justify-end">
+                <select className="border border-gray-300 p-1 w-60">
+                  <option className="text-[#d42041] font-semibold">
+                    Maintenance Status
+                  </option>
+                  <option className="text-[#d42041] font-semibold">
+                    Pending
+                  </option>
+                  <option className="text-[#d42041] font-semibold">
+                    Active
+                  </option>
+                  <option className="text-[#d42041] font-semibold">
+                    In Progress
+                  </option>
+                  <option className="text-[#d42041] font-semibold">
+                    Completed
+                  </option>
+                  <option className="text-[#d42041] font-semibold">
+                    Closed
+                  </option>
+                </select>
+              </div>
             </div>
           </div>
         ))}
       </div>
-
-      {openingBreakdownTicketForm && (
-        <AddBreakdownTicketForm
-          setopeningBreakdownTicketForm={setopeningBreakdownTicketForm}
-        />
-      )}
     </div>
   );
 }
 
-export default BreakdownManagement;
+export default ActiveJobs;
