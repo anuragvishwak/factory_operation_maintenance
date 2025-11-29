@@ -121,20 +121,23 @@ function AddProductionLineForm({ setopeningProductionLineForm }) {
                   >
                     <input
                       type="checkbox"
-                      value={machine.id}
+                      value={machine.machineName}
                       onChange={(e) => {
                         if (e.target.checked) {
                           setAssignedMachines([
                             ...assignedMachines,
-                            machine.id,
+                            machine.machineName, 
                           ]);
                         } else {
                           setAssignedMachines(
-                            assignedMachines.filter((id) => id !== machine.id)
+                            assignedMachines.filter(
+                              (name) => name !== machine.machineName
+                            )
                           );
                         }
                       }}
                     />
+
                     <span>{machine.machineName}</span>
                   </div>
                 ))}

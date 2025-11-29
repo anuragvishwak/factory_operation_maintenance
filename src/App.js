@@ -21,6 +21,10 @@ import AdminMaintenance from "./Admin (Factory Owner)/AdminMaintenance/AdminMain
 import AdminInventoryManagement from "./Admin (Factory Owner)/AdminInventoryManagement";
 import AdminSafetyQuality from "./Admin (Factory Owner)/Safety Quality/AdminSafetyQuality";
 import FinanceVendor from "./Admin (Factory Owner)/Finance and Vendor/FinanceVendor";
+import MachineOverview from "./Maintenance Engineer/MachineOverview";
+import ActiveJobs from "./Maintenance Engineer/ActiveJobs";
+import MaintenanceBreakdown from "./Maintenance Engineer/MaintenanceBreakdown";
+import PreventiveMaintenanceSchedule from "./Maintenance Engineer/PreventiveMaintenanceSchedule";
 
 function App() {
   return (
@@ -62,8 +66,28 @@ function App() {
           />
 
           <Route
+            path="/ActiveJobs"
+            element={<ActiveJobs />}
+          />
+
+          <Route
+            path="/MaintenanceBreakdown"
+            element={<MaintenanceBreakdown />}
+          />
+
+          <Route
+            path="/PreventiveMaintenanceSchedule"
+            element={<PreventiveMaintenanceSchedule />}
+          />
+
+          <Route
             path="/SupplierContractManagementDashboard"
             element={<SupplierContractManagementDashboard />}
+          />
+
+           <Route
+            path="/MachineOverview"
+            element={<MachineOverview />}
           />
 
           <Route

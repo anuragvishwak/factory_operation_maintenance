@@ -83,7 +83,7 @@ function ProductionLines() {
                 </p>
               </div>
 
-              <div className="p-4">
+              <div className="border-[#d42041] border-t-8 p-4">
                 <div className="grid grid-cols-2 gap-3">
                   <div className="border w-full border-gray-300 p-3">
                     <p className="text-sm text-[#2f323a]">Supervisor</p>
@@ -128,22 +128,13 @@ function ProductionLines() {
 
                   <div className="mt-4">
                     {production.assignedMachines.map((machineId) => {
-                      const machine = gettingMachines.find(
-                        (m) => m.id === machineId
-                      );
-
-                      if (!machine) return null;
-
                       return (
                         <div
                           className="flex items-center space-x-1"
                           key={machineId}
                         >
                           <p className="text-[#d42041]">
-                            {machine.machineName}
-                          </p>
-                          <p className="text-[#2f323a] text-sm">
-                            ({machine.machineCode})
+                            {machineId}
                           </p>
                         </div>
                       );

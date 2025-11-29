@@ -63,7 +63,7 @@ function SafetyChecks() {
               </div>
             </div>
 
-            <div className="p-4">
+            <div className="border-t-8 border-[#d42041] p-4">
               <div className="border border-gray-300 p-3">
                 <p className="text-sm text-[#2f323a]">Check Description</p>
                 <p className="text-[#d42041] text-sm">

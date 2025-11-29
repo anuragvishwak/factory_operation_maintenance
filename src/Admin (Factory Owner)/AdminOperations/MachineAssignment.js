@@ -52,7 +52,7 @@ function MachineAssignment() {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 my-4 gap-4">
+      <div className="grid grid-cols-3 my-4 gap-4">
         {gettingAssignMachines.map((assign) => (
           <div className="bg-white border border-gray-300 p-4">
             <div>

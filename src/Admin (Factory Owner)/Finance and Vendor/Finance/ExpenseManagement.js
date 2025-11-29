@@ -42,9 +42,58 @@ function ExpenseManagement() {
         </button>
       </div>
 
-      <div>{gettingExpenses.map((expense)=>(
-        <div>{}</div>
-      ))}</div>
+      <div className="grid grid-cols-3 gap-4">
+        {gettingExpenses.map((expense) => (
+          <div>
+            {expense.expenseCategory === "general_expenses" ? (
+              <div></div>
+            ) : (
+              <div>
+                <div className="border bg-white border-gray-300 mt-4">
+                  <div className="bg-[#2f323a] p-4">
+                    <div className="flex items-start justify-between">
+                      <p className="text-white text-xl font-bold">
+                        {expense.billType}
+                      </p>
+                      <p className="bg-white text-sm text-[#2f323a] py-1 px-3 rounded-full font-semibold">
+                        {expense.billPaymentStatus}
+                      </p>
+                    </div>
+                    <p className="text-[#d42041]">{expense.billMonth}</p>
+                  </div>
+
+                  <div className="border-t-8 border-[#d42041] p-4">
+                    <div className="border border-gray-300 p-3">
+                      <p className="text-[#2f323a]">Bill Amount</p>
+                      <p className="text-[#d42041] font-semibold">
+                        {expense.billAmount}
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4 mt-4">
+                      <div className="border border-gray-300 p-3">
+                        <p className="text-[#2f323a]">Due Date</p>
+                        <p className="text-[#d42041] font-semibold">
+                          {expense.billDueDate}
+                        </p>
+                      </div>
+
+                      <div className="border border-gray-300 p-3">
+                        <p className="text-[#2f323a]">Expense Category</p>
+                        <p className="text-[#d42041] font-semibold">
+                          {expense.expenseCategory === "utility_bills"
+                            ? "Utility Bills"
+                            : ""}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
       {openingAddExpense && (
         <AddExpenseForm setopeningAddExpense={setopeningAddExpense} />
       )}
