@@ -25,6 +25,7 @@ import MachineOverview from "./Maintenance Engineer/MachineOverview";
 import ActiveJobs from "./Maintenance Engineer/ActiveJobs";
 import MaintenanceBreakdown from "./Maintenance Engineer/MaintenanceBreakdown";
 import PreventiveMaintenanceSchedule from "./Maintenance Engineer/PreventiveMaintenanceSchedule";
+import MaintenanceSparePartsRequest from "./Maintenance Engineer/MaintenanceSparePartsRequest";
 
 function App() {
   return (
@@ -49,7 +50,6 @@ function App() {
           <Route path="/AdminSafetyQuality" element={<AdminSafetyQuality />} />
           <Route path="/FinanceVendor" element={<FinanceVendor />} />
 
-
           <Route
             path="/MachineOperatorDashboard"
             element={<MachineOperatorDashboard />}
@@ -65,10 +65,9 @@ function App() {
             element={<QualityEngineerDashboard />}
           />
 
-          <Route
-            path="/ActiveJobs"
-            element={<ActiveJobs />}
-          />
+          <Route path="/ActiveJobs" element={<ActiveJobs />} />
+          <Route path="/MaintenanceSparePartsRequest" element={<MaintenanceSparePartsRequest />} />
+
 
           <Route
             path="/MaintenanceBreakdown"
@@ -85,10 +84,7 @@ function App() {
             element={<SupplierContractManagementDashboard />}
           />
 
-           <Route
-            path="/MachineOverview"
-            element={<MachineOverview />}
-          />
+          <Route path="/MachineOverview" element={<MachineOverview />} />
 
           <Route
             path="/StoreInventoryManagerDashboard"

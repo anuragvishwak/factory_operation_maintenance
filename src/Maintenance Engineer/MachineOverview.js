@@ -23,7 +23,21 @@ function MachineOverview() {
   return (
     <div className="bg-gray-100 min-h-screen h-full">
       <MaintenanceEngineerNavbar />
+      <div className="flex bg-white m-4 p-4 border border-gray-300 items-end justify-between">
+        <div className="">
+          <p className="text-[#2f323a] text-xl font-bold">
+            Machine Overview
+          </p>
+          <p className="text-[#d42041]">
+            Machine Overview from one centralized system.
+          </p>
+        </div>
 
+        <input
+          placeholder="Search breakdowns..."
+          className="border border-gray-300 py-1.5 px-3 w-96"
+        />
+      </div>
       <div className="grid grid-cols-3 m-4 gap-4">
         {gettingMachines.map((machine) => (
           <div className="border bg-white border-gray-300">
