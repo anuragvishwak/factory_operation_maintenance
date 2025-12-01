@@ -98,7 +98,7 @@ function AssignMachineForm({ setopeningAssignMachineForm }) {
                 setselectedMachine(event.target.value);
               }}
               className="border border-gray-300 p-1 w-full"
-            >
+            > 
               <option>Select Machine</option>
               {gettingMachines.map((machine) => (
                 <option value={machine.machineName} className="">

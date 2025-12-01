@@ -6,6 +6,7 @@ import { database } from "../FirebaseConfig";
 
 function MaintenanceBreakdown() {
   const [gettingBreakdownTickets, setgettingBreakdownTickets] = useState([]);
+  
   async function renderingBreakdownTickets() {
     const taskDetails = await getDocs(
       collection(database, "breakdown_database")
@@ -25,7 +26,7 @@ function MaintenanceBreakdown() {
   return (
     <div className="bg-gray-100 min-h-screen h-full">
       <MaintenanceEngineerNavbar />
-      <div className="bg-white border m-4 p-4 border-gray-300 flex items-center justify-between">
+      <div className="bg-white border m-4 p-4 rounded-xl border-gray-300 flex items-center justify-between">
         <div>
           <p className="text-[#2f323a] text-xl font-bold">Brekadown</p>
           <p className="text-[#d42041]">
@@ -38,36 +39,41 @@ function MaintenanceBreakdown() {
         />
       </div>
 
-      <div className="flex justify-center bg-white p-4 border border-gray-300 m-4">
-        <table className="w-full border border-gray-300 table-auto">
-          <thead className="bg-[#2f323a] border border-gray-300 text-white">
-            <th className="py-1 text-start px-8">Breakdown Date</th>
-            <th className="text-start">Machine Name</th>
-            <th className="text-start">Breakdown Type</th>
-            <th className="text-start">Severity</th>
-            <th className="text-start">Reported By</th>
-            <th className="text-start">Description</th>
+      <div className="flex justify-center bg-white rounded-xl p-4 border border-gray-300 m-4">
+        <table className="w-full table-auto">
+          <thead className="text-[#2f323a] bg-gray-100">
+            <th className="py-1 text-start px-8 font-medium">Breakdown Date</th>
+            <th className="text-start font-medium">Machine Name</th>
+            <th className="text-start font-medium">Breakdown Type</th>
+            <th className="text-start font-medium">Severity</th>
+            <th className="text-start font-medium">Reported By</th>
+            <th className="text-start font-medium">Description</th>
           </thead>
 
-          <tbody>
+          <tbody className="">
             {gettingBreakdownTickets.map((breakdown) => (
-              <tr className="border-b border-gray-300">
-                <td className="text-start text-[#d42041] font-semibold py-1 px-8">
+              <tr className="border-y border-gray-300">
+                <td className="text-start text-[#2f323a] py-1 px-8">
                   {breakdown.dateTime}
                 </td>
-                <td className="text-start text-[#d42041] font-semibold">
-                  {breakdown.selectedMachine}
+                <td>
+                  <div>
+                    <p className="text-start text-[#2f323a] font-semibold">
+                      {breakdown.selectedMachine}
+                    </p>
+                    <p className="text-[#2f323a] text-[12px]">MAC-567</p>
+                  </div>
                 </td>
-                <td className="text-start text-[#d42041] font-semibold">
+                <td className="text-start text-[#2f323a]">
                   {breakdown.breakdownType}
                 </td>
-                <td className="text-start text-[#d42041] font-semibold">
+                <td className="text-start text-[#2f323a]">
                   {breakdown.severity}
                 </td>
-                <td className="text-start text-[#d42041] font-semibold">
+                <td className="text-start text-[#2f323a]">
                   {breakdown.reportedBy}
                 </td>
-                <td className="text-justify text-[#d42041] font-semibold">
+                <td className="text-justify text-[#2f323a]">
                   {breakdown.issueDescription}
                 </td>
               </tr>

@@ -66,7 +66,18 @@ function MaintenanceEngineerNavbar() {
           Preventive Maintenance Schedule
         </button>
         <button>Work Orders</button>
-        <button>Spare Parts Requests</button>
+        <button
+          className={`${
+            location.pathname === "/MaintenanceSparePartsRequest"
+              ? "text-[#d42041]"
+              : ""
+          }`}
+          onClick={() => {
+            navigation("/MaintenanceSparePartsRequest");
+          }}
+        >
+          Spare Parts Requests
+        </button>
         <button>Health Logs</button>
         <button>History</button>
         <button>Checklist</button>

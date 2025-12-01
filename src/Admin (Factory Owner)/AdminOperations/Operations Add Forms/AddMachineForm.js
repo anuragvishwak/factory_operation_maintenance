@@ -37,7 +37,7 @@ function AddMachineForm({ setopeningAddMachineForm, renderingMachines }) {
   return (
     <div className="bg-black z-50 flex flex-col justify-center items-center fixed inset-0 bg-opacity-70">
       <div className="bg-white p-4">
-        <div className="flex items-start mb-5 justify-between">
+        <div className="flex items-start justify-between">
           <p className="text-[#d42041] text-2xl font-bold">Add Machine</p>
           <button
             onClick={() => {
@@ -48,6 +48,7 @@ function AddMachineForm({ setopeningAddMachineForm, renderingMachines }) {
             Close
           </button>
         </div>
+        <hr className="border-gray-300 my-2"/>
 
         <div>
           <div>
